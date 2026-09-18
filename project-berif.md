@@ -1,7 +1,7 @@
 #My Project Brief
 
 ##The Question: 
-Which Areas in Lagos prone to flooding due to high rainfall and poor drainage?
+Which Areas in Lagos prone to flooding due to high rainfall and poor drainage? FOCUS ON OJO LGA
 
 ##The Data i need:
 1. Topography map & Elevation map of Lagos State - USGS EarthExplorer platform / OpenTopography - https://portal.opentopography.org - 30m

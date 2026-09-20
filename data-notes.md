@@ -41,7 +41,7 @@
 
 ## CRS and preparation
 - All sources: Layers arrived in EPSG: 4326 (WSG84)
-- Study Area: Ojo LGA, extracted from GRID3 wards
-- All layers clipped to study area, then reprojected to EPSG:32631 (UTM 31N)
+- Study Area: Ojo LGA, extracted from GRID3 wards and reprojected to EPSG:32631 (UTM 31N) projected CRS for Western States of Nigeria
+- All layers clipped to study area, then reprojected to EPSG:32631 (UTM 31N) projected CRS for Western States of Nigeria
 - Area Check: Ojo LGA 172.5 km2, while publised figure is 182 km2 from Wikipedia
 - Working file in data/processed/ , raw files untouched 

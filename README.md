@@ -25,6 +25,9 @@ Flooded areas in Ojo LGA with possible drainage routes.
 │   ├── raw/                     downloads, not committed
 │   └── processed/               outputs, not committed
 ├── scripts/
+├── month-1/
+│   ├── month-1-surmarry.md                  
+│   └── waterway_extent          output map of month one
 └── requirements.txt
 ```
 

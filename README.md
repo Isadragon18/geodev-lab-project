@@ -1,10 +1,3 @@
-# My Geodev Lab Africa Project
-Which Areas in Lagos are prone to flooding, along with pathways for routing flooded areas?
-
-Built over the twelve months with Geodev Lab Africa, Cohort One.
-See project brief for full details.
-
-
 # Which Areas in Lagos are prone to flooding, along with pathways for routing flooded areas? (OJO LGA)
 
 This project helps quickly identify areas prone to flooding, especially during the rainy season.

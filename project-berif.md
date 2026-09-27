@@ -10,3 +10,4 @@ Which Areas in Lagos prone to flooding due to high rainfall and poor drainage? F
 4. Flooding reports in Lagos - HDX - https://data.humdata.org/
 5. LGA boundaries in Lagos - GRID3 - www.data.grid3.org
 6. Soil type and Land cover in Lagos - Mendeley - https://data.mendeley.com/
+7. Settlement area - GRID3 - www.data.grid3.org

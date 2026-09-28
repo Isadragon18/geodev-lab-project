@@ -24,7 +24,7 @@
 # Data notes
 
 **Week 2 deliverable.** GeoDev Lab Africa, Cohort One.
-Author: <your name>
+Author: Yusuf Isaiah Ifeanyichukwu
 
 What I downloaded, where it came from, what is in it, and what is wrong
 with it.
@@ -35,9 +35,10 @@ with it.
 
 | # | Dataset | Type | Retrieved | Status |
 |---|---|---|---|---|
-| 1 | <name> | Vector | <date> | OK |
-| 2 | <name> | Raster | <date> | OK |
-| 3 | <name> | Vector | <date> | Partial |
+| 1 | Nigeria Operational Wards | Vector | 09/13/2026 | OK |
+| 2 | rivers | Vector | 09/13/2026 | OK |
+| 3 | waterbody | Vector | 09/13/2026 | OK |
+| 3 | Settlement | Vector | 09/28/2026 | OK |
 
 ---
 

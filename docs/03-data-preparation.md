@@ -52,7 +52,7 @@
 # Data preparation
 
 **Week 3 deliverable.** GeoDev Lab Africa, Cohort One.
-Author: <your name>
+Author: Yusuf Isaiah Ifeanyichukwu
 
 What I reprojected, what I clipped, what I checked, and what I fixed.
 
@@ -60,15 +60,17 @@ What I reprojected, what I clipped, what I checked, and what I fixed.
 
 ## 1. Coordinate system decisions
 
-**Working CRS:** <EPSG:XXXX>
+**Working CRS:** EPSG:32631 WGS 84 / UTM Zone 31N
 
-**Why this one:** <One or two sentences. If you are measuring distance or
-area, say that your chosen CRS is in metres and name the zone.>
+**Why this one:** My project work will be dealing with distance, and my study area is focused on the western part of Nigeria. 
+The best Zone for these conditions is UTM 31N.
 
 | Dataset | CRS as downloaded | CRS after | Operation |
 |---|---|---|---|
-| <name> | EPSG:4326 | EPSG:32631 | Reprojected |
-| <name> | EPSG:32631 | EPSG:32631 | No change needed |
+| LGA Boundary | EPSG:4326 | EPSG:32631 | Reprojected |
+| Rivers | EPSG:32631 | EPSG:32631 | No change needed |
+| Waterbody | EPSG:32631 | EPSG:32631 | No change needed |
+| Settlement | EPSG:4326 | EPSG:32631 | Reprojected |
 
 > Reprojecting recalculates every coordinate. Assigning a CRS only
 > relabels the data. Say which one you did.

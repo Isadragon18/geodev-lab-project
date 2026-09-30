@@ -129,31 +129,32 @@ Also, the water bodies covered all areas of my study area.
 | Column | What it holds | Nulls |
 |---|---|---|
 | `fid` | Feature ID for each feature in the layer | 0 |
-| `block_id` | combination of the osm_type and osm_id | 0 |
-| `country` | The id of each feature on OSM | 0 |
-| `iso3` | The OSM type of each feature | 0 |
-| `block_area` | The type of natural water, i.e., query parameter (water) | 0 |
-| `block_peri` | The location of water | 6 |
-| `block_neig` | Land usage | 6 |
-| `building_c` | Alternative name | 6 |
-| `building_a` | link to the open Wikidata database | 5 |
-| `building_1` |  | 6 |
-| `building_2` | The type of water (river or lagoon) | 4 |
-| `building_3` | Vector type | 5 |
-| `building_4` | Local name of the water body | 4 |
-| `building_5` | Land usage | 6 |
-| `extent_typ` | Alternative name | 6 |
-| `mgrs_code` | link to the open Wikidata database | 5 |
-| `ndvi_mean` |  | 6 |
-| `evi_mean` | The type of water (river or lagoon) | 4 |
+| `block_id` | Unique identifier for each block | 0 |
+| `country` | Country name | 0 |
+| `iso3` | Three-letter ISO country code | 0 |
+| `block_area` | Block area in square meters | 0 |
+| `block_peri` | Block perimeter in meters | 6 |
+| `block_neig` | Number of neighboring blocks | 6 |
+| `building_c` | Total count of buildings, taken at the center point, within the block | 6 |
+| `building_a` | Area of the smallest building whose centroid falls within the block, measured in square meters | 5 |
+| `building_1` | Area of the largest building whose centroid falls within the block, measured in square meters | 6 |
+| `building_2` | Sum of building area values within the block, measured in square meters, this field is calculated using the building area contained within the block | 4 |
+| `building_3` | Median building footprint area for buildings whose centroids fall within the block, measured in square meters | 5 |
+| `building_4` | Standard deviation of building footprint area for buildings whose centroids fall within the block, measured in square meters. | 4 |
+| `building_5` | Sum of building area values within the block as described in the building_area_sum fi eld divided by the block area, expressed as a percentage | 6 |
+| `extent_typ` | Categorical settlement classifi cation for which the block belongs: Built-up area (BUA), Small settlement Area (SSA), or Hamlet | 6 |
+| `mgrs_code` | The Military Grid Reference System code of the settlement for which the block belongs | 5 |
+| `ndvi_mean` | Average of Normalized Difference Vegetation Index (NDVI) pixel-values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 6 |
+| `evi_mean` | Average of Enhanced Vegetation Index (EVI) pixel-values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 4 |
 | `gbuilding_` | Vector type | 5 |
 | `gbuilding1` | Local name of the water body | 4 |
 | `blocks_per` | Alternative name | 6 |
 | `building_6` | link to the open Wikidata database | 5 |
 | `building_m` |  | 6 |
 | `building_7` | The type of water (river or lagoon) | 4 |
-| `bd_class` | Vector type | 5 |
-| `composite_` | Local name of the water body | 4 |
+| `ma_class` | Categorical classifi cation of max building area in m2 defi ned as Low when the building_area_max is <= 700 and High if > 700 | 5 |
+| `bd_class` | Average of Normalized Difference Vegetation Index (NDVI) pixel-values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Refl ectance images collected during 2024 | 5 |
+| `composite_` | A composite of the bd_class and ma_class fi lled with open space or airport when applicable, providing a classifi cation of blocks with similar characteristics. | 4 |
 
 **What I noticed**
 

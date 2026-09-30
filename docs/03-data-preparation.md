@@ -1,26 +1,60 @@
+# Data preparation
 
-# Data notes
-## GRID3 Nigeria Operational Wards v3.0
-- Source: https://data.grid3.org
-- Downloaded: 09/13/2026
-- 774 features, polygons
-- Columns: globalid (String), uniq_id (Integer64), timestamp (Date), editor (String), lganame (String), lgacode (String), statename (String), statecode (String), source (String), amapcode (String).
-- No nulls in lganame
-- Covers my LGS fully
+**Week 3 deliverable.** GeoDev Lab Africa, Cohort One.
+Author: Yusuf Isaiah Ifeanyichukwu
 
-## OSM rivers, extracted via QuickOSM
-- Query: waterway='river' within Ojo LGA extent
-- Extracted: 09/13/2026
-- 11 features, lines
-- Only one had a value in the name column, remaining were null.
-- Coverage is good for most parts but not all river are covered in the area.
+What I reprojected, what I clipped, what I checked, and what I fixed.
 
-## OSM waterbody, extracted via QuickOSM
-- Query: natural='river' within Ojo LGA extent
-- Extracted: 09/13/2026
-- 6 features, polygon
-- Most columns have null values with only two features has names.
-- Coverage is good for most parts but some features also cover area of other features.
+---
+
+## 1. Coordinate system decisions
+
+**Working CRS:** EPSG:32631 WGS 84 UTM Zone 31N
+
+**Why this one:** My project work will be dealing with distance, and my study area is focused on the western part of Nigeria. 
+The best Zone for these conditions is UTM 31N.
+
+| Dataset | CRS as downloaded | CRS after | Operation |
+|---|---|---|---|
+| LGA Boundary | EPSG:4326 | EPSG:32631 | Reprojected |
+| Rivers | EPSG:32631 | EPSG:32631 | No change needed |
+| Waterbody | EPSG:32631 | EPSG:32631 | No change needed |
+| Settlement | EPSG:4326 | EPSG:32631 | Reprojected |
+
+> Reprojecting recalculates every coordinate. Assigning a CRS only
+> relabels the data. Say which one you did.
+
+## 2. Clipping to the study area
+
+- **Boundary used:** C:/Users/isaiah.yusuf/Desktop/GeoDev_GIS/my-project/data/processed/study_area.gpkg
+- **Features before clipping:** 202146
+- **Features after clipping:** 3109
+
+Some features of the Settlements seem to be pointing to bare ground on the OSM basemap, 
+left them due to my confidence in the source.
+
+## 3. The five quality checks
+
+| Check | Result | Action taken |
+|---|---|---|
+| Is the CRS what I think it is? | yes | reprojected all layers and project to on common CRS |
+| Are there nulls in the fields I need? | yes in the river and waterbody layers | currently working on getting the values |
+| Are there duplicate features? | no | all features point to one object in space and time |
+| Is the geometry valid? | yes | nothing |
+| Does coverage span the whole study area? | yes | nothing |
+
+## 4. Problems found, and what I did
+
+**<Problem.>** <What it was, and whether you fixed it or flagged it.
+Flagging honestly is acceptable. Hiding it is not.>
+
+## 5. The analysis-ready output
+
+- **File:** `data/processed/Clipped_settle.gpkg`
+- **Format:** GeoPackage
+- **CRS:** EPSG:32631 WGS 84 UTM Zone 31N
+- **Features:** 3109
+- **Produced by:** Vector Clip analysis within study area boundary
 
 ## OSM rivers, OJO LGA
 - 6 features
@@ -46,66 +80,6 @@
 - All layers clipped to study area, then reprojected to EPSG:32631 (UTM 31N) projected CRS for Western States of Nigeria
 - Area Check: Ojo LGA 172.5 km2, while publised figure is 182 km2 from Wikipedia
 - Working file in data/processed/ , raw files untouched 
-
-
-
-# Data preparation
-
-**Week 3 deliverable.** GeoDev Lab Africa, Cohort One.
-Author: Yusuf Isaiah Ifeanyichukwu
-
-What I reprojected, what I clipped, what I checked, and what I fixed.
-
----
-
-## 1. Coordinate system decisions
-
-**Working CRS:** EPSG:32631 WGS 84 / UTM Zone 31N
-
-**Why this one:** My project work will be dealing with distance, and my study area is focused on the western part of Nigeria. 
-The best Zone for these conditions is UTM 31N.
-
-| Dataset | CRS as downloaded | CRS after | Operation |
-|---|---|---|---|
-| LGA Boundary | EPSG:4326 | EPSG:32631 | Reprojected |
-| Rivers | EPSG:32631 | EPSG:32631 | No change needed |
-| Waterbody | EPSG:32631 | EPSG:32631 | No change needed |
-| Settlement | EPSG:4326 | EPSG:32631 | Reprojected |
-
-> Reprojecting recalculates every coordinate. Assigning a CRS only
-> relabels the data. Say which one you did.
-
-## 2. Clipping to the study area
-
-- **Boundary used:** <source and file>
-- **Features before clipping:** <number>
-- **Features after clipping:** <number>
-
-<One sentence on anything unexpected, for example features that fell just
-outside the boundary and whether you kept them.>
-
-## 3. The five quality checks
-
-| Check | Result | Action taken |
-|---|---|---|
-| Is the CRS what I think it is? | <yes / no> | <what you did> |
-| Are there nulls in the fields I need? | <count> | <what you did> |
-| Are there duplicate features? | <count> | <what you did> |
-| Is the geometry valid? | <count invalid> | <what you did> |
-| Does coverage span the whole study area? | <yes / no> | <what you did> |
-
-## 4. Problems found, and what I did
-
-**<Problem.>** <What it was, and whether you fixed it or flagged it.
-Flagging honestly is acceptable. Hiding it is not.>
-
-## 5. The analysis-ready output
-
-- **File:** `data/processed/<filename>.gpkg`
-- **Format:** GeoPackage
-- **CRS:** <EPSG:XXXX>
-- **Features:** <number>
-- **Produced by:** <script name, or "manually in QGIS">
 
 ---
 

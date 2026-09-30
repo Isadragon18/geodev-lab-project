@@ -5,7 +5,7 @@ It also identifies the best drainage routes for flooded areas.
 For the Urban Planning Committee.
 Ojo LGA, Lagos State, Nigeria.
 
-**GeoDev Lab Africa, Cohort One.** Yusuf Isaiah Ifeanyichukwu
+**GeoDev Lab Africa, Cohort One.** Yusuf Isaiah Ifeanyichukwu / POD 5
 
 ---
 
@@ -16,7 +16,7 @@ Flooded areas in Ojo LGA with possible drainage routes.
 ## What's in here
 
 ```
-<project-name>/
+geodev-lab-project/
 ├── docs/
 │   ├── 01-project-brief.md      Week 1
 │   ├── 02-data-notes.md         Week 2
@@ -24,7 +24,9 @@ Flooded areas in Ojo LGA with possible drainage routes.
 ├── data/
 │   ├── raw/                     downloads, not committed
 │   └── processed/               outputs, not committed
-├── scripts/
+├── dev/
+│   ├── hello.py                
+│   └── screenshot/          
 ├── month-1/
 │   ├── month-1-surmarry.md                  
 │   └── waterway_extent          output map of month one
@@ -46,7 +48,7 @@ The data is not in this repository. Every source is linked in
 [the project brief](docs/01-project-brief.md), so anyone can fetch it.
 
 ## Month 2: development environment and early Python
-- Week 5: set up Python, VS Code and the terminal. hello.py runs.
+- Week 5: set up Python, VS Code, and the terminal. hello.py runs.
 
 ## Progress
 
@@ -58,7 +60,7 @@ The data is not in this repository. Every source is linked in
 - [ ] Week 6, Environments and project setup with uv
 - [ ] Week 7, Python and the six ideas
 - [ ] Week 8, Python, files and data
-- [ ] Week 9, Consolidation refactoring
+- [ ] Week 9, Consolidation and refactoring
 
 ---
 

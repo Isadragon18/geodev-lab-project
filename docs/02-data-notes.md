@@ -1,27 +1,4 @@
 # Data notes
-## GRID3 Nigeria Operational Wards v3.0
-- Source: https://data.grid3.org
-- Downloaded: 09/13/2026
-- 774 features, polygons
-- Columns: globalid (String), uniq_id (Integer64), timestamp (Date), editor (String), lganame (String), lgacode (String), statename (String), statecode (String), source (String), amapcode (String).
-- No nulls in lganame
-- Covers my LGS fully
-
-## OSM rivers, extracted via QuickOSM
-- Query: waterway='river' within Ojo LGA extent
-- Extracted: 09/13/2026
-- 11 features, lines
-- Only one had a value in the name column, remaining were null.
-- Coverage is good for most parts but not all river are covered in the area.
-
-## OSM waterbody, extracted via QuickOSM
-- Query: natural='river' within Ojo LGA extent
-- Extracted: 09/13/2026
-- 6 features, polygon
-- Most columns have null values with only two features has names.
-- Coverage is good for most parts but some features also cover area of other features.
-
-# Data notes
 
 **Week 2 deliverable.** GeoDev Lab Africa, Cohort One.
 Author: Yusuf Isaiah Ifeanyichukwu
@@ -38,37 +15,150 @@ with it.
 | 1 | Nigeria Operational Wards | Vector | 09/13/2026 | OK |
 | 2 | rivers | Vector | 09/13/2026 | OK |
 | 3 | waterbody | Vector | 09/13/2026 | OK |
-| 3 | Settlement | Vector | 09/28/2026 | OK |
+| 4 | Settlement | Vector | 09/28/2026 | OK |
 
 ---
 
-## 1. <Dataset name>
+## 1. Nigeria Operational Wards
 
-- **Source:** <https://...>
-- **Retrieved:** <date>
-- **File:** `data/raw/<filename>`
-- **Format:** <GeoPackage / GeoTIFF / CSV>
-- **Geometry type:** <Point / Line / Polygon / n/a>
-- **Feature count:** <number>
-- **CRS as downloaded:** <EPSG:XXXX>
+- **Source:** https://data.grid3.org
+- **Retrieved:** 09/13/2026
+- **File:** `data/raw/NGA_LGA_Boundaries_2_2609687066015738692`
+- **Format:** shapefile
+- **Geometry type:** Polygon (Multipolygon)
+- **Feature count:** 774 features
+- **CRS as downloaded:** EPSG:4326 - WGS 84
 
 **Key columns**
 
 | Column | What it holds | Nulls |
 |---|---|---|
-| `<column>` | <description> | <count> |
-| `<column>` | <description> | <count> |
+| `globalid` | holds the IDs of each LGA on a global scale | 0 |
+| `uniq_id` | unique id to identify each LGA | 0 |
+| `timestamp` | last update of the LGA | 0 |
+| `editor` | Who last update the LGA | 0 |
+| `lganame` | The LGA name given by the Country | 0 |
+| `lgacode` | The unique identifier assigned by the country | 0 |
+| `statename` | The state that houses the LGA | 0 |
+| `statecode` | two letters to identifier the state | 0 |
+| `source` | the source of the LGA information | 0 |
+| `amapcode` |  | 10 |
 
 **What I noticed**
 
-<Gaps, duplicates, odd values, name spellings that differ from your other
-datasets. This section is where the marks are. Do not leave it empty.>
+I noticed that the boundary outline doesn't match the outlines as shown on my base map from OpenStreetMap. 
+Also, the amapcode field was not defined in the metadata (uses) and has null values for 10 features.
 
 ---
 
-## 2. <Dataset name>
+## 2. rivers
 
-<Repeat the block above for each dataset.>
+- **Source:** Query: waterway='river' within Ojo LGA extent
+- **Retrieved:** 09/13/2026
+- **File:** `data/processed/River.gpkg`
+- **Format:** Geopackage
+- **Geometry type:** Line (MultiLineString)
+- **Feature count:** 9, but only 6 are used.
+- **CRS as downloaded:** EPSG:32631 - WGS 84 / UTM zone 31N
+
+**Key columns**
+
+| Column | What it holds | Nulls |
+|---|---|---|
+| `fid` | Feature ID for of each feature in the layer | 0 |
+| `full_id` | combination of the osm_type and osm_id | 0 |
+| `osm_id` | The id of each feature on OSM | 0 |
+| `osm_type` | The OSM type of each feature | 0 |
+| `waterway` | The type of waterway, i.e., query parameter (river) | 0 |
+| `name` | The local name of the river | 5 |
+
+**What I noticed**
+
+I noticed that the 3 rivers were tied to places that are water bodies. 
+Not all features have their local names, except for one: River Owo.
+
+---
+
+## 3. waterbody
+
+- **Source:** Query: natural='river' within Ojo LGA extent
+- **Retrieved:** 09/13/2026
+- **File:** `data/processed/NaturalWater.gpkg`
+- **Format:** Geopackage
+- **Geometry type:** Polygon (Multipolygon)
+- **Feature count:** 7, but only 6 features are used
+- **CRS as downloaded:** EPSG:32631 - WGS 84 / UTM zone 31N
+
+**Key columns**
+
+| Column | What it holds | Nulls |
+|---|---|---|
+| `fid` | Feature ID for each feature in the layer | 0 |
+| `full_id` | combination of the osm_type and osm_id | 0 |
+| `osm_id` | The id of each feature on OSM | 0 |
+| `osm_type` | The OSM type of each feature | 0 |
+| `natural` | The type of natural water, i.e., query parameter (water) | 0 |
+| `place` | The location of water | 6 |
+| `landuse` | Land usage | 6 |
+| `alt_name` | Alternative name | 6 |
+| `wikidata` | link to the open Wikidata database | 5 |
+| `wetland` |  | 6 |
+| `water` | The type of water (river or lagoon) | 4 |
+| `type` | Vector type | 5 |
+| `name` | Local name of the water body | 4 |
+
+**What I noticed**
+
+I noticed that many fields have null values, meaning the information wasn't recorded or obtained. 
+Also, the water bodies covered all areas of my study area.
+
+---
+
+## 4. Settlement
+
+- **Source:** https://data.grid3.org
+- **Retrieved:** 07/22/2026
+- **File:** `data/raw/GRID3_NGA_settlement_extents_v4_1_7127322163395981696`
+- **Format:** shapefile
+- **Geometry type:** Polygon (Multipolygon)
+- **Feature count:** 3109 features
+- **CRS as downloaded:** EPSG:4326 - WGS 84
+
+**Key columns**
+
+| Column | What it holds | Nulls |
+|---|---|---|
+| `fid` | Feature ID for each feature in the layer | 0 |
+| `block_id` | combination of the osm_type and osm_id | 0 |
+| `country` | The id of each feature on OSM | 0 |
+| `iso3` | The OSM type of each feature | 0 |
+| `block_area` | The type of natural water, i.e., query parameter (water) | 0 |
+| `block_peri` | The location of water | 6 |
+| `block_neig` | Land usage | 6 |
+| `building_c` | Alternative name | 6 |
+| `building_a` | link to the open Wikidata database | 5 |
+| `building_1` |  | 6 |
+| `building_2` | The type of water (river or lagoon) | 4 |
+| `building_3` | Vector type | 5 |
+| `building_4` | Local name of the water body | 4 |
+| `building_5` | Land usage | 6 |
+| `extent_typ` | Alternative name | 6 |
+| `mgrs_code` | link to the open Wikidata database | 5 |
+| `ndvi_mean` |  | 6 |
+| `evi_mean` | The type of water (river or lagoon) | 4 |
+| `gbuilding_` | Vector type | 5 |
+| `gbuilding1` | Local name of the water body | 4 |
+| `blocks_per` | Alternative name | 6 |
+| `building_6` | link to the open Wikidata database | 5 |
+| `building_m` |  | 6 |
+| `building_7` | The type of water (river or lagoon) | 4 |
+| `bd_class` | Vector type | 5 |
+| `composite_` | Local name of the water body | 4 |
+
+**What I noticed**
+
+I noticed that many fields have null values, meaning the information wasn't recorded or obtained. 
+Also, the water bodies covered all areas of my study area.
 
 ---
 

@@ -45,12 +45,20 @@ pip install -r requirements.txt
 The data is not in this repository. Every source is linked in
 [the project brief](docs/01-project-brief.md), so anyone can fetch it.
 
+## Month 2: development environment and early Python
+- Week 5: set up Python, VS Code and the terminal. hello.py runs.
+
 ## Progress
 
 - [x] Week 1, project brief with a source link for every dataset
 - [x] Week 2, data downloaded, opened, and described
-- [x] Week 3, reprojected, clipped and quality-checked
+- [x] Week 3, reprojected, clipped, and quality-checked
 - [x] Week 4, first spatial analysis, checked four ways
+- [x] Week 5, The Terminal and VS Code
+- [ ] Week 6, Environments and project setup with uv
+- [ ] Week 7, Python and the six ideas
+- [ ] Week 8, Python, files and data
+- [ ] Week 9, Consolidation refactoring
 
 ---
 

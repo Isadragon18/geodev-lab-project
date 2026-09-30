@@ -133,43 +133,42 @@ Also, the water bodies covered all areas of my study area.
 | `country` | Country name | 0 |
 | `iso3` | Three-letter ISO country code | 0 |
 | `block_area` | Block area in square meters | 0 |
-| `block_peri` | Block perimeter in meters | 6 |
-| `block_neig` | Number of neighboring blocks | 6 |
-| `building_c` | Total count of buildings, taken at the center point, within the block | 6 |
-| `building_a` | Area of the smallest building whose centroid falls within the block, measured in square meters | 5 |
-| `building_1` | Area of the largest building whose centroid falls within the block, measured in square meters | 6 |
-| `building_2` | Sum of building area values within the block, measured in square meters, this field is calculated using the building area contained within the block | 4 |
-| `building_3` | Median building footprint area for buildings whose centroids fall within the block, measured in square meters | 5 |
-| `building_4` | Standard deviation of building footprint area for buildings whose centroids fall within the block, measured in square meters. | 4 |
-| `building_5` | Sum of building area values within the block as described in the building_area_sum fi eld divided by the block area, expressed as a percentage | 6 |
-| `extent_typ` | Categorical settlement classifi cation for which the block belongs: Built-up area (BUA), Small settlement Area (SSA), or Hamlet | 6 |
-| `mgrs_code` | The Military Grid Reference System code of the settlement for which the block belongs | 5 |
-| `ndvi_mean` | Average of Normalized Difference Vegetation Index (NDVI) pixel-values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 6 |
-| `evi_mean` | Average of Enhanced Vegetation Index (EVI) pixel-values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 4 |
-| `gbuilding_` | Vector type | 5 |
-| `gbuilding1` | Local name of the water body | 4 |
-| `blocks_per` | Alternative name | 6 |
-| `building_6` | link to the open Wikidata database | 5 |
-| `building_m` |  | 6 |
-| `building_7` | The type of water (river or lagoon) | 4 |
-| `ma_class` | Categorical classifi cation of max building area in m2 defi ned as Low when the building_area_max is <= 700 and High if > 700 | 5 |
-| `bd_class` | Average of Normalized Difference Vegetation Index (NDVI) pixel-values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Refl ectance images collected during 2024 | 5 |
-| `composite_` | A composite of the bd_class and ma_class fi lled with open space or airport when applicable, providing a classifi cation of blocks with similar characteristics. | 4 |
+| `block_peri` | Block perimeter in meters | 0 |
+| `block_neig` | Number of neighboring blocks | 0 |
+| `building_c` | Total count of buildings, taken at the center point, within the block | 0 |
+| `building_a` | Area of the smallest building whose centroid falls within the block, measured in square meters | 0 |
+| `building_1` | Area of the largest building whose centroid falls within the block, measured in square meters | 0 |
+| `building_2` | Sum of building area values within the block, measured in square meters; this field is calculated using the building area contained within the block | 0 |
+| `building_3` | Median building footprint area for buildings whose centroids fall within the block, measured in square meters | 0 |
+| `building_4` | Standard deviation of building footprint area for buildings whose centroids fall within the block, measured in square meters. | 0 |
+| `building_5` | Sum of building area values within the block as described in the building_area_sum field divided by the block area, expressed as a percentage | 0 |
+| `extent_typ` | Categorical settlement classification to which the block belongs: Built-up area (BUA), Small settlement Area (SSA), or Hamlet | 0 |
+| `mgrs_code` | The Military Grid Reference System code of the settlement to which the block belongs | 0 |
+| `ndvi_mean` | Average of Normalized Difference Vegetation Index (NDVI) pixel values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 0 |
+| `evi_mean` | Average of Enhanced Vegetation Index (EVI) pixel values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 0 |
+| `gbuilding_` | Maximum building height per block, measured in meters, with the temporal maximum taken across 2021-2023 | 0 |
+| `gbuilding1` | Mean building height, measured in meters, per block averaged across 2021-2023 | 0 |
+| `blocks_per` | Number of blocks within the extent of the settled area based on mgrs_code. | 0 |
+| `building_6` | Building count, taken at the center point, divided by the block area, per hectare | 0 |
+| `building_m` | Quantile rank of building count density across all blocks | 0 |
+| `building_7` | Quantile rank of total building area across all blocks | 0 |
+| `ma_class` | Categorical classifi cation of max building area in m2 defi ned as Low when the building_area_max is <= 700 and High if > 700 | 0 |
+| `bd_class` | Average of Normalized Difference Vegetation Index (NDVI) pixel values within a block calculated from a cloud-free median composite of Sentinel-2 Surface Reflectance images collected during 2024 | 0 |
+| `composite_` | A composite of the bd_class and ma_class fi lled with open space or airport when applicable, providing a classification of blocks with similar characteristics. | 0 |
 
 **What I noticed**
 
-I noticed that many fields have null values, meaning the information wasn't recorded or obtained. 
-Also, the water bodies covered all areas of my study area.
+I noticed that most parts of the rivers and water bodies were mapped under the settlements.
 
 ---
 
 ## Cross-cutting problems
 
-**<Problem one.>** <For example: everything is at a different resolution
-and nothing can be combined until Week 3.>
+**Scale** Datasets from different sources do not have the same boundary and differ by 100m or more.
 
-**<Problem two.>** <For example: LGA names differ between two sources and
-the join will fail.>
+**Null Values** Most of my datasets had null values, which could prove difficult in the future.
+
+**Name** Most of the features had no names, which could prove difficult in the future.
 
 ---
 

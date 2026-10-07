@@ -25,7 +25,10 @@ geodev-lab-project/
 │   ├── raw/                     downloads, not committed
 │   └── processed/               outputs, not committed
 ├── dev/
-│   ├── hello.py                
+│   ├── hello.py                 prints "My setup works"
+│   ├── check.py                 prints the pandas version
+│   ├── pyproject.toml
+│   ├── uv.lock                             
 │   └── screenshot/          
 ├── month-1/
 │   ├── month-1-surmarry.md                  
@@ -49,6 +52,7 @@ The data is not in this repository. Every source is linked in
 
 ## Month 2: development environment and early Python
 - Week 5: set up Python, VS Code, and the terminal. hello.py runs.
+- Week 6: set up the project with uv and added pandas + requests. check.py prints the pandas version.
 
 ## Progress
 
@@ -57,7 +61,7 @@ The data is not in this repository. Every source is linked in
 - [x] Week 3, reprojected, clipped, and quality-checked
 - [x] Week 4, first spatial analysis, checked four ways
 - [x] Week 5, The Terminal and VS Code
-- [ ] Week 6, Environments and project setup with uv
+- [x] Week 6, Environments and project setup with uv
 - [ ] Week 7, Python and the six ideas
 - [ ] Week 8, Python, files and data
 - [ ] Week 9, Consolidation and refactoring

@@ -28,7 +28,9 @@ geodev-lab-project/
 │   ├── hello.py                 prints "My setup works"
 │   ├── check.py                 prints the pandas version
 │   ├── pyproject.toml
-│   ├── uv.lock                             
+│   ├── uv.lock
+│   ├── ward.csv
+│   ├── analyse.py                     
 │   └── screenshot/          
 ├── month-1/
 │   ├── month-1-surmarry.md                  
@@ -53,6 +55,7 @@ The data is not in this repository. Every source is linked in
 ## Month 2: development environment and early Python
 - Week 5: set up Python, VS Code, and the terminal. hello.py runs.
 - Week 6: set up the project with uv and added pandas + requests. check.py prints the pandas version.
+- Week 7: analyse.py reads ward.csv, converts each area, and classifies each ward.
 
 ## Progress
 
@@ -62,7 +65,7 @@ The data is not in this repository. Every source is linked in
 - [x] Week 4, first spatial analysis, checked four ways
 - [x] Week 5, The Terminal and VS Code
 - [x] Week 6, Environments and project setup with uv
-- [ ] Week 7, Python and the six ideas
+- [x] Week 7, Python and the six ideas
 - [ ] Week 8, Python, files and data
 - [ ] Week 9, Consolidation and refactoring
 

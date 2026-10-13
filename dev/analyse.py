@@ -1,4 +1,4 @@
-with open("ward.csv") as f:
+with open("wards.csv") as f:
     lines = f.readlines()
     
 total = 0

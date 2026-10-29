@@ -32,7 +32,9 @@ geodev-lab-project/
 │   ├── ward.csv
 │   ├── analyse.py
 │   ├── poverty_states.csv
-│   ├── inspect_data.py                      
+│   ├── inspect_data.py
+│   ├── summary.csv
+│   ├── summary.py                       
 │   └── screenshot/          
 ├── month-1/
 │   ├── month-1-surmarry.md                  
@@ -56,9 +58,11 @@ The data is not in this repository. Every source is linked in
 
 ## Month 2: development environment and early Python
 - Week 5: set up Python, VS Code, and the terminal. hello.py runs.
-- Week 6: set up the project with uv and added pandas + requests. check.py prints the pandas version.
+- Week 6: set up the project with uv and add pandas + requests. check.py prints the pandas version.
 - Week 7: analyse.py reads ward.csv, converts each area, and classifies each ward.
 - Week 8: inspect_data.py summarises the poverty rate and rank in my poverty states file.
+- Week 9: summary.py summarises each column of my settlement CSV file based on the smallest, largest, average, and count value.
+- It also creates a summary CSV file. This month has opened my eyes to an automated way of digitizing my GIS manual file check.
 
 ## Progress
 
@@ -70,7 +74,7 @@ The data is not in this repository. Every source is linked in
 - [x] Week 6, Environments and project setup with uv
 - [x] Week 7, Python and the six ideas
 - [x] Week 8, Python, files and data
-- [ ] Week 9, Consolidation and refactoring
+- [x] Week 9, Consolidation and refactoring
 
 ---
 

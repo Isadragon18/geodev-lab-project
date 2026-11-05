@@ -1,0 +1,15 @@
+# Python evn & cache files
+__pycache__/
+.venv/
+*.pyc
+
+# Raster files
+*.tif
+**.tiff
+*.TIF
+*.zip
+
+# Editor and System Cluster
+.DS_Store
+Thumbs.db
+.vscode/

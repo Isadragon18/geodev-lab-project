@@ -34,6 +34,7 @@ geodev-lab-project/
 │   ├── poverty_states.csv
 │   ├── inspect_data.py
 │   ├── summary.csv
+│   ├── settlement.csv
 │   ├── summary.py                       
 │   └── screenshot/          
 ├── month-1/
@@ -62,7 +63,9 @@ The data is not in this repository. Every source is linked in
 - Week 7: analyse.py reads ward.csv, converts each area, and classifies each ward.
 - Week 8: inspect_data.py summarises the poverty rate and rank in my poverty states file.
 - Week 9: summary.py summarises each column of my settlement CSV file based on the smallest, largest, average, and count value.
-- It also creates a summary CSV file. This month has opened my eyes to an automated way of digitizing my GIS manual file check.
+- It also creates a summary CSV file.
+## Month 2 Reflection:
+-  This month has opened my eyes to an automated way of digitizing my GIS manual file check.
 
 ## Progress
 

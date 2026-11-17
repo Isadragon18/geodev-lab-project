@@ -23,7 +23,7 @@ print("Matched after Cleaning: ", matched, " of ", len(wards), " wards")
 print(joined[["ward_name", "population_2024"]])
 
 fig, ax = plt.subplots(figsize=(7,8))
-wards.plot(ax=ax, color="#E6F2F3", edgecolor="#037E8E")
+# wards.plot(ax=ax, color="#E6F2F3", edgecolor="#037E8E")
 joined.plot(ax=ax, column="population_2024", legend=True, cmap="Greens")
 # ax.set_title("My Study Area")
 ax.set_axis_off()

@@ -38,9 +38,12 @@ settle1 = settle1.to_crs(wards.crs)
 settle2 = gpd.read_file("my_data/two_settle.gpkg")
 settle2 = settle2.to_crs(wards.crs)
 
+buf = natural.buffer(10000)
+
 fig, ax = plt.subplots(figsize=(7,8))
 wards.plot(ax=ax, color="#E6F2F3", edgecolor="#037E8E")
 natural.plot(ax=ax, color="#094923")
+buf.plot(ax=ax, color="#FFE4B5", alpha=0.5)
 settle2.plot(ax=ax, color="#F44308")
 settle1.plot(ax=ax, color="#CFF027")
 settle0.plot(ax=ax, color="#179BEC")

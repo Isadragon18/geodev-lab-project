@@ -67,6 +67,9 @@ The data is not in this repository. Every source is linked in
 ## Month 2 Reflection:
 -  This month has opened my eyes to an automated way of digitizing my GIS manual file check.
 
+## Month 3: Geospatial Python and Automation
+- Week 10: Geopandas. Loaded, checked, joined, and mapped my ward layer in code.
+
 ## Progress
 
 - [x] Week 1, project brief with a source link for every dataset
